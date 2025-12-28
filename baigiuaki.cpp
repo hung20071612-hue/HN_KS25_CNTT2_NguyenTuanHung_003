@@ -4,7 +4,7 @@
 #include <limits>
 using namespace std;
 
-// L?p Employee
+
 class Employee {
 private:
     int id;
@@ -12,13 +12,13 @@ private:
     float salary;
 
 public:
-    // Hàm t?o có tham s?
+
     Employee(int id, string name, float salary) : id(id), name(name), salary(salary) {}
     
-    // Hàm t?o không tham s?
+
     Employee() : id(0), name(""), salary(0) {}
     
-    // Nh?p thông tin (mã du?c truy?n t? ngoài)
+
     void input() {
         cout << "Nhap ten nhan vien: ";
         getline(cin, name);
@@ -38,29 +38,29 @@ public:
         }
     }
     
-    // Hi?n th? thông tin
+
     void printInfo() const {
         cout << "ID: " << id << " - Ten: " << name << " - Luong: " << salary << endl;
     }
     
-    // Tr? v? mã nhân viên
+
     int getId() const {
         return id;
     }
     
-    // C?p nh?t luong
+
     void setSalary(float salary) {
         this->salary = salary;
     }
 };
 
-// L?p EmployeeManager
+
 class EmployeeManager {
 private:
     vector<Employee> list;
     int nextId;
     
-    // Hàm h? tr? tìm index theo ID
+
     int findIndexById(int id) const {
         for (size_t i = 0; i < list.size(); i++) {
             if (list[i].getId() == id) {
@@ -70,7 +70,7 @@ private:
         return -1;
     }
     
-    // Hàm nh?p s? nguyên an toàn
+
     int inputInteger(const string& prompt) {
         int value;
         while (true) {
@@ -88,7 +88,7 @@ private:
         }
     }
     
-    // Hàm nh?p s? th?c an toàn
+
     float inputFloat(const string& prompt) {
         float value;
         while (true) {
@@ -107,10 +107,10 @@ private:
     }
 
 public:
-    // Kh?i t?o nextId = 3001
+
     EmployeeManager() : nextId(3001) {}
     
-    // Thêm nhân viên m?i
+
     void addEmployee() {
         Employee emp(nextId, "", 0);
         emp.input();
@@ -119,7 +119,7 @@ public:
         nextId++;
     }
     
-    // Hi?n th? danh sách nhân viên
+
     void showAll() const {
         if (list.empty()) {
             cout << "Danh sach rong!" << endl;
@@ -131,7 +131,7 @@ public:
         }
     }
     
-    // C?p nh?t luong theo ID
+
     void updateSalaryById() {
         if (list.empty()) {
             cout << "Danh sach rong! Khong the cap nhat." << endl;
@@ -150,7 +150,7 @@ public:
         }
     }
     
-    // Xóa nhân viên theo ID
+
     void deleteById() {
         if (list.empty()) {
             cout << "Danh sach rong! Khong the xoa." << endl;
@@ -168,7 +168,7 @@ public:
         }
     }
     
-    // Menu chính
+
     void menu() {
         int choice;
         do {
